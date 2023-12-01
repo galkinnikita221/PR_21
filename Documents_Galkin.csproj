@@ -63,6 +63,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="classes\Common\DBConnection.cs" />
+    <Compile Include="classes\DocumentContext.cs" />
     <Compile Include="Interfaces\IDocument.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -97,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="classes\" />
     <Folder Include="Elements\" />
     <Folder Include="Pages\" />
   </ItemGroup>
