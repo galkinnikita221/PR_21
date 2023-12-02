@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid Background="Gray" Margin="0,0,0,370">
-            <Image Source="C:\Users\galki\OneDrive\Рабочий стол\Documents_Galkin\Image\icon.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,0,0" Height="70" Width="63"/>
+            <Image Source="C:\Users\student-a210.PERMAVIAT\Desktop\Documents_Galkin\Image\icon.png" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,0,0" Height="70" Width="63"/>
             <Label Content="Учёт входящих и исходящих документов" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White" Margin="79,10,0,0"/>
             <Button Click="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="24" Margin="690,7,0,0" Content="Выйти"/>
         </Grid>
