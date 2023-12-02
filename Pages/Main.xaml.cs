@@ -24,6 +24,7 @@ namespace Documents_Galkin.Pages
         public Main()
         {
             InitializeComponent();
+            CreatedUI();
         }
 
         public void CreatedUI()
