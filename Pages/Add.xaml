@@ -9,24 +9,27 @@
       Title="Учёт входящих и исходящих докоументов">
 
     <Grid Background="White">
-        <Grid Background="Gray" Margin="0,0,0,373">
-            <Image Source="C:\Users\student-a210.PERMAVIAT\Desktop\Documents_Galkin\Image\icon.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="53" Margin="12,0,0,0"/>
-            <Label Content="Добавить документ" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Margin="70,4,0,0"/>
+        <Grid Background="Gray" Margin="0,0,0,373" VerticalAlignment="Top">
+            <Image Source="C:\Users\student-a210.PERMAVIAT\Desktop\Documents_Galkin\Image\icon.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Height="53" Margin="12,10,0,0"/>
+            <Label Content="Добавить документ" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Margin="70,10,0,0"/>
             <Button Content="Вернуться" Click="Back" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="25" Margin="0,5,10,0"/>
         </Grid>
         <Grid Margin="0,77,0,0">
-            <Image x:Name="src" Source="C:\Users\student-a210.PERMAVIAT\Desktop\Documents_Galkin\Image\icon-black.png" Width="144" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,58,0,0" Height="144"/>
-            <Button Click="SelectImage" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="30" Content="Выбрать" Margin="10,0,0,136"/>
+            <Image x:Name="src" Source="C:\Users\galki\OneDrive\Рабочий стол\Documents_Galkin\Image\icon-black.png" Width="144" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,58,0,0" Height="144"/>
+            <Button Click="SelectImage" Content="Выбрать" Margin="10,0,0,129" HorizontalAlignment="Left" Width="100" Height="30" VerticalAlignment="Bottom"/>
             <Label Content="Укажите наименование" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,0,0,0" FontSize="14" FontWeight="Bold"/>
             <TextBox x:Name="tb_name" VerticalAlignment="Top" Width="592" HorizontalAlignment="Left" Margin="198,29,0,0" Height="29"/>
             <Label Content="Укажите ответственного" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,58,0,0" FontSize="14" FontWeight="Bold"/>
-            <TextBox x:Name="tb_user" VerticalAlignment="Top" Width="592" HorizontalAlignment="Left" Margin="198,87,0,0" Height="28"/>
+            <ComboBox x:Name="tb_user" VerticalAlignment="Top" HorizontalAlignment="Left" Width="592" Margin="198,87,0,0" Height="28"/>
             <Label Content="Укажите код документа" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,116,0,0" FontSize="14" FontWeight="Bold"/>
             <TextBox x:Name="tb_id" VerticalAlignment="Top" Width="592" HorizontalAlignment="Left" Margin="198,145,0,0" Height="28"/>
-            <Label Content="Укажите дату поступления" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="198,0,0,0" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Укажите дату поступления" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,177,0,0" FontSize="14" FontWeight="Bold"/>
             <TextBox x:Name="tb_date" VerticalAlignment="Top" Width="592" HorizontalAlignment="Left" Margin="198,206,0,0" Height="28"/>
             <Label Content="Укажите статус" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,239,0,0" FontSize="14" FontWeight="Bold"/>
-            <ComboBox x:Name="tb_status" VerticalAlignment="Top" HorizontalAlignment="Left" Width="592" Margin="198,273,0,0"/>
+            <ComboBox x:Name="tb_status" VerticalAlignment="Top" HorizontalAlignment="Left" Width="592" Margin="198,273,0,0">
+                <TextBlock Text="Входящий"/>
+                <TextBlock Text="Исходящий"/>
+            </ComboBox>
             <Label Content="Направление" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="198,300,0,0" FontSize="14" FontWeight="Bold"/>
             <TextBox x:Name="tb_vector" VerticalAlignment="Top" Width="497" HorizontalAlignment="Left" Margin="198,335,0,0" Height="28"/>
             <Button x:Name="bthAdd" Content="Сохранить" Click="AddDocument" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,0,9"/>

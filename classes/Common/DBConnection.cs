@@ -9,7 +9,7 @@ namespace Documents_Galkin.classes.Common
 {
 	public class DBConnection
 	{
-		public static readonly string Path = @"C:\Users\galki\";
+		public static readonly string Path = @"C:\Users\galki\OneDrive\Рабочий стол\Documents_Galkin\DataBase\Database.accdb";
 		public static OleDbConnection Connection()
 		{
 			OleDbConnection oleDbConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Path);

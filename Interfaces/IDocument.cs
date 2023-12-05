@@ -12,5 +12,9 @@ namespace Documents_Galkin.Interfaces
 
 		List<Documents_Galkin.classes.DocumentContext> AllDocuments();
 		void Delete();
+
+		void SaveRespo();
+		List<string> AllRespo();
+		void DeleteRespo(string respo);
 	}
 }

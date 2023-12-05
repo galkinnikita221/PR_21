@@ -4,6 +4,7 @@ using System.IO;
 using Microsoft.Win32;
 using System.Windows.Media.Imaging;
 using System;
+using System.Collections.Generic;
 
 namespace Documents_Galkin.Pages
 {
@@ -17,6 +18,10 @@ namespace Documents_Galkin.Pages
         public Add(Model.Document Document = null)
         {
             InitializeComponent();
+
+            // Загружаем список ответственных
+            List<string> respo = new classes.DocumentContext().AllRespo();
+            tb_user.ItemsSource = respo;
             if (Document != null)
             {
                 this.Document = Document;
@@ -42,7 +47,7 @@ namespace Documents_Galkin.Pages
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "PNG (*.png)|*All files (*.*)|*.*";
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
             openFileDialog.FilterIndex = 2;
             openFileDialog.ShowDialog();
             if (openFileDialog.FileName != "")
@@ -89,12 +94,20 @@ namespace Documents_Galkin.Pages
                 MessageBox.Show("Укажите направление");
                 return;
             }
+            string selectedRespo = (string)tb_user.SelectedItem;
+
+            // Проверяем, что значение не пустое
+            if (string.IsNullOrEmpty(selectedRespo))
+            {
+                MessageBox.Show("Выберите ответственного");
+                return;
+            }
             if (Document == null)
             {
                 classes.DocumentContext newDocument = new classes.DocumentContext();
                 newDocument.src = s_src;
                 newDocument.name = tb_name.Text;
-                newDocument.user = tb_user.Text;
+                newDocument.Respo = selectedRespo;  // Получение ответственного из ComboBox
                 newDocument.id_document = tb_id.Text;
 
                 DateTime newDate = new DateTime();
@@ -105,13 +118,15 @@ namespace Documents_Galkin.Pages
                 newDocument.Save();
                 MessageBox.Show("Документ добавлен");
             }
+
             else
             {
+
                 classes.DocumentContext newDocument = new classes.DocumentContext();
                 newDocument.src = s_src;
                 newDocument.id = Document.id;
                 newDocument.name = tb_name.Text;
-                newDocument.user = tb_user.Text;
+                newDocument.Respo = selectedRespo;
                 newDocument.id_document = tb_id.Text;
 
                 DateTime newDate = new DateTime();
@@ -119,7 +134,7 @@ namespace Documents_Galkin.Pages
                 newDocument.date = newDate;
                 newDocument.status = tb_status.SelectedIndex;
                 newDocument.vector = tb_vector.Text;
-                newDocument.Save();
+                newDocument.Save(true);
                 MessageBox.Show("Документ изменён<>");
             }
             MainWindow.init.AllDocuments = new classes.DocumentContext().AllDocuments();
